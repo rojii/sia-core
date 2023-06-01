@@ -163,12 +163,13 @@ func NewMemDB() *MemDB {
 }
 
 var (
-	bVersion        = []byte("Version")
-	bMainChain      = []byte("MainChain")
-	bCheckpoints    = []byte("Checkpoints")
-	bFileContracts  = []byte("FileContracts")
-	bSiacoinOutputs = []byte("SiacoinOutputs")
-	bSiafundOutputs = []byte("SiafundOutputs")
+	bVersion           = []byte("Version")
+	bMainChain         = []byte("MainChain")
+	bCheckpoints       = []byte("Checkpoints")
+	bFileContracts     = []byte("FileContracts")
+	bSiacoinOutputs    = []byte("SiacoinOutputs")
+	bSiafundOutputs    = []byte("SiafundOutputs")
+	bPrevMainBlockHash = []byte("PrevMainBlockHash")
 
 	keyFoundationOutputs = []byte("FoundationOutputs")
 	keyHeight            = []byte("Height")
