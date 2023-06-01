@@ -266,6 +266,7 @@ func NewDBStore(db DB, n *consensus.Network, genesisBlock types.Block) (*DBStore
 			bFileContracts,
 			bSiacoinOutputs,
 			bSiafundOutputs,
+			bPrevMainBlockHash,
 		} {
 			if _, err := dtx.CreateBucket(bucket); err != nil {
 				return err
