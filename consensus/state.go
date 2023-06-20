@@ -104,6 +104,7 @@ type State struct {
 	OakTarget                 types.BlockID `json:"oakTarget"`
 	FoundationPrimaryAddress  types.Address `json:"foundationPrimaryAddress"`
 	FoundationFailsafeAddress types.Address `json:"foundationFailsafeAddress"`
+	BMMHash                   types.BMMHash `json:"bmmhash"`
 }
 
 // EncodeTo implements types.EncoderTo.
@@ -213,6 +214,10 @@ func (s State) NonceFactor() uint64 {
 		return 1
 	}
 	return 1009
+}
+
+func (s State) MaxWithdrawalWeight() uint64 {
+	return 400_000
 }
 
 // MaxBlockWeight is the maximum "weight" of a valid child block.
