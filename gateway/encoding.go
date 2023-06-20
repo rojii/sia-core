@@ -87,6 +87,11 @@ type RPCDiscoverIP struct {
 	IP string
 }
 
+type RequestBMM struct {
+	emptyRequest
+	Hash []types.Block
+}
+
 func (r *RPCDiscoverIP) encodeResponse(e *types.Encoder) { e.WriteString(r.IP) }
 func (r *RPCDiscoverIP) decodeResponse(d *types.Decoder) { r.IP = d.ReadString() }
 func (r *RPCDiscoverIP) maxResponseLen() int             { return 128 }
@@ -191,6 +196,7 @@ var (
 	idSendBlocks          = newID("SendBlocks")
 	idSendBlk             = newID("SendBlk")
 	idRelayHeader         = newID("RelayHeader")
+	idRequestBMM          = newID("RequestBMM")
 	idRelayTransactionSet = newID("RelayTransactionSet")
 )
 
