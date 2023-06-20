@@ -45,6 +45,9 @@ var (
 // A Hash256 is a generic 256-bit cryptographic hash.
 type Hash256 [32]byte
 
+// A 32 byte hash of the Mainchains BMM Block.
+type BMMHash [32]byte
+
 // A PublicKey is an Ed25519 public key.
 type PublicKey [32]byte
 
@@ -459,10 +462,11 @@ func (txn *Transaction) FileContractID(i int) FileContractID {
 
 // A BlockHeader contains a Block's non-transaction data.
 type BlockHeader struct {
-	ParentID   BlockID   `json:"parentID"`
-	Nonce      uint64    `json:"nonce"`
-	Timestamp  time.Time `json:"timestamp"`
-	MerkleRoot Hash256   `json:"merkleRoot"`
+	ParentID      BlockID   `json:"parentID"`
+	Nonce         uint64    `json:"nonce"`
+	Timestamp     time.Time `json:"timestamp"`
+	MerkleRoot    Hash256   `json:"merkleRoot"`
+	PrevMainBlock Hash256   `json:"prevmainblock"`
 }
 
 // ID returns a hash that uniquely identifies a block.

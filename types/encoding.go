@@ -235,6 +235,9 @@ func (h Hash256) EncodeTo(e *Encoder) { e.Write(h[:]) }
 // EncodeTo implements types.EncoderTo.
 func (id BlockID) EncodeTo(e *Encoder) { e.Write(id[:]) }
 
+// EncodeTo implements types.EncoderTo
+func (h BMMHash) EncodeTo(e *Encoder) { e.Write(h[:]) }
+
 // EncodeTo implements types.EncoderTo.
 func (id TransactionID) EncodeTo(e *Encoder) { e.Write(id[:]) }
 
